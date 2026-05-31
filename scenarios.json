@@ -1,7 +1,7 @@
 {
   "schema": 1,
   "name": "RuOpenRay scenarios",
-  "version": "2026-05-31-clean-titles",
+  "version": "2026-06-01-intel-dsa",
   "description": "Official updateable routing scenarios for RuOpenRay.",
   "scenarios": {
     "ruMinimal": {
@@ -449,14 +449,13 @@
       }
     },
     "intel": {
-      "title": "Intel",
-      "detail": "Сайт Intel, Download Center, Driver & Support Assistant, developer/support/community и CDN-загрузки.",
+      "title": "Intel / DSA",
+      "detail": "Intel, Download Center и Driver & Support Assistant. Для scan в Chrome/Edge разрешите Local Network Access.",
       "rules": [
         {
           "type": "field",
           "outboundTag": "proxy",
           "domain": [
-            "geosite:intel",
             "domain:intel.com",
             "domain:www.intel.com",
             "domain:intel.ru",
