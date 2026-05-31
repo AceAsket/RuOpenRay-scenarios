@@ -1,0 +1,132 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/AceAsket/RuOpenRay-scenarios/main/scenarios.schema.json",
+  "title": "RuOpenRay scenario catalog",
+  "type": "object",
+  "required": [
+    "schema",
+    "name",
+    "version",
+    "scenarios"
+  ],
+  "additionalProperties": true,
+  "properties": {
+    "schema": {
+      "const": 1
+    },
+    "name": {
+      "type": "string",
+      "minLength": 1
+    },
+    "version": {
+      "type": "string",
+      "minLength": 1
+    },
+    "description": {
+      "type": "string"
+    },
+    "scenarios": {
+      "type": "object",
+      "maxProperties": 200,
+      "additionalProperties": {
+        "type": "object",
+        "required": [
+          "title",
+          "rules"
+        ],
+        "additionalProperties": true,
+        "properties": {
+          "title": {
+            "type": "string",
+            "minLength": 1
+          },
+          "detail": {
+            "type": "string"
+          },
+          "icon": {
+            "oneOf": [
+              {
+                "type": "string",
+                "description": "Iconify name, for example simple-icons:telegram"
+              },
+              {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                  "type": {
+                    "enum": [
+                      "svg",
+                      "iconify"
+                    ]
+                  },
+                  "name": {
+                    "type": "string"
+                  },
+                  "svg": {
+                    "type": "string"
+                  },
+                  "background": {
+                    "type": "string"
+                  },
+                  "foreground": {
+                    "type": "string"
+                  }
+                }
+              }
+            ]
+          },
+          "rules": {
+            "type": "array",
+            "minItems": 1,
+            "maxItems": 1000,
+            "items": {
+              "type": "object",
+              "additionalProperties": true,
+              "properties": {
+                "type": {
+                  "const": "field"
+                },
+                "domain": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "ip": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "source": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "inboundTag": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "port": {
+                  "type": "string"
+                },
+                "network": {
+                  "type": "string"
+                },
+                "outboundTag": {
+                  "type": "string"
+                },
+                "balancerTag": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

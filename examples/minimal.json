@@ -1,0 +1,28 @@
+{
+  "schema": 1,
+  "name": "My RuOpenRay scenarios",
+  "version": "2026-05-31",
+  "scenarios": {
+    "myService": {
+      "title": "My service through proxy",
+      "detail": "Domains and optional ports routed through the active proxy outbound.",
+      "icon": "mdi:rocket-launch",
+      "rules": [
+        {
+          "type": "field",
+          "outboundTag": "proxy",
+          "domain": [
+            "domain:example.com",
+            "regexp:.*\\.example\\.com"
+          ]
+        },
+        {
+          "type": "field",
+          "outboundTag": "proxy",
+          "network": "tcp,udp",
+          "port": "443"
+        }
+      ]
+    }
+  }
+}
