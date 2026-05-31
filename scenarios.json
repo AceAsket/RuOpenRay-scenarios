@@ -1,13 +1,12 @@
 {
   "schema": 1,
   "name": "RuOpenRay scenarios",
-  "version": "2026-05-31",
+  "version": "2026-05-31-icons",
   "description": "Official updateable routing scenarios for RuOpenRay.",
   "scenarios": {
     "ruMinimal": {
       "title": "Минимальный РФ",
       "detail": "Локальная сеть и RU напрямую, antifilter-community через proxy.",
-      "icon": "circle-flags:ru",
       "rules": [
         {
           "type": "field",
@@ -35,7 +34,6 @@
     "discordFull": {
       "title": "Discord полный",
       "detail": "Домены, CDN, RTC через Cloudflare, voice/media и резервные Google WebRTC диапазоны.",
-      "icon": "simple-icons:discord",
       "rules": [
         {
           "type": "field",
@@ -124,7 +122,6 @@
     "telegramFull": {
       "title": "Telegram полный",
       "detail": "Домены Telegram, regexp-паттерны, MTProto IP и UDP для звонков.",
-      "icon": "simple-icons:telegram",
       "rules": [
         {
           "type": "field",
@@ -181,7 +178,6 @@
     "metaFull": {
       "title": "Meta полный",
       "detail": "Meta, Facebook, Instagram, WhatsApp, Messenger и CDN одной подборкой.",
-      "icon": "simple-icons:meta",
       "rules": [
         {
           "type": "field",
@@ -229,7 +225,6 @@
     "tuyaSmartLife": {
       "title": "Tuya / Smart Life",
       "detail": "Tuya, Smart Life, региональные OpenAPI endpoints и облачный NLB из практического списка.",
-      "icon": "simple-icons:tuya",
       "rules": [
         {
           "type": "field",
@@ -260,7 +255,6 @@
     "chatgpt": {
       "title": "ChatGPT / OpenAI",
       "detail": "Домены ChatGPT/OpenAI и Cloudflare/OpenAI IP ranges одной подборкой.",
-      "icon": "simple-icons:openai",
       "rules": [
         {
           "type": "field",
@@ -297,7 +291,6 @@
     "googleFull": {
       "title": "Google / CDN / QUIC",
       "detail": "Google domains, Gemini geosite, QUIC/HTTP3 UDP ranges и TCP/CDN ranges.",
-      "icon": "simple-icons:google",
       "rules": [
         {
           "type": "field",
@@ -359,7 +352,6 @@
     "microsoftFull": {
       "title": "Microsoft / Windows / Store",
       "detail": "Microsoft, Windows Update, Store, Xbox, Office, Azure CDN и UDP/QUIC диапазоны.",
-      "icon": "simple-icons:microsoft",
       "rules": [
         {
           "type": "field",
@@ -427,7 +419,6 @@
     "antifilterFull": {
       "title": "Antifilter geo/ext",
       "detail": "geoip:antifilter, geoip:antifilter-community и ext LoyalsoldierSite.dat.",
-      "icon": "mdi:shield-web",
       "rules": [
         {
           "type": "field",
@@ -449,7 +440,6 @@
     "speedtestOokla": {
       "title": "Speedtest / Ookla",
       "detail": "Сайт Speedtest, API Ookla и тестовые серверы на 8080 через активный proxy.",
-      "icon": "simple-icons:speedtest",
       "rules": [
         {
           "type": "field",
@@ -479,7 +469,6 @@
     "youtube": {
       "title": "YouTube через proxy",
       "detail": "geosite, основные домены, short links, API, ytimg и regexp для googlevideo/youtube.",
-      "icon": "simple-icons:youtube",
       "rules": [
         {
           "type": "field",
@@ -501,7 +490,6 @@
     "instagram": {
       "title": "Instagram через proxy",
       "detail": "Instagram, CDN, Graph API и Threads через активный сервер.",
-      "icon": "simple-icons:instagram",
       "rules": [
         {
           "type": "field",
@@ -523,7 +511,6 @@
     "whatsapp": {
       "title": "WhatsApp через proxy",
       "detail": "Web WhatsApp, wa.me, whatsapp.net и медиа-домены.",
-      "icon": "simple-icons:whatsapp",
       "rules": [
         {
           "type": "field",
@@ -545,7 +532,6 @@
     "facebook": {
       "title": "Facebook через proxy",
       "detail": "Facebook, Messenger, Graph API, CDN и facebook-dev geosite.",
-      "icon": "simple-icons:facebook",
       "rules": [
         {
           "type": "field",
@@ -572,7 +558,6 @@
     "linkedin": {
       "title": "LinkedIn через proxy",
       "detail": "LinkedIn, short links, CDN и статические ресурсы.",
-      "icon": "simple-icons:linkedin",
       "rules": [
         {
           "type": "field",
@@ -594,7 +579,6 @@
     "patreon": {
       "title": "Patreon через proxy",
       "detail": "Patreon, API, community и медиа с patreonusercontent.",
-      "icon": "simple-icons:patreon",
       "rules": [
         {
           "type": "field",
@@ -616,7 +600,6 @@
     "github": {
       "title": "GitHub через proxy",
       "detail": "GitHub, API, raw/assets, Pages и githubusercontent.",
-      "icon": "simple-icons:github",
       "rules": [
         {
           "type": "field",
@@ -639,7 +622,6 @@
     "claude": {
       "title": "Claude через proxy",
       "detail": "Claude web, Anthropic Console, API и документация через активный сервер.",
-      "icon": "simple-icons:anthropic",
       "rules": [
         {
           "type": "field",
@@ -661,7 +643,6 @@
     "xTwitter": {
       "title": "X / Twitter через proxy",
       "detail": "X, Twitter, t.co, media CDN и twimg.",
-      "icon": "simple-icons:x",
       "rules": [
         {
           "type": "field",
@@ -684,7 +665,6 @@
     "tiktok": {
       "title": "TikTok через proxy",
       "detail": "TikTok, CDN, byteoversea и video/static домены.",
-      "icon": "simple-icons:tiktok",
       "rules": [
         {
           "type": "field",
@@ -706,7 +686,6 @@
     "netflix": {
       "title": "Netflix через proxy",
       "detail": "Netflix, nflxvideo и служебные CDN-домены.",
-      "icon": "simple-icons:netflix",
       "rules": [
         {
           "type": "field",
@@ -727,7 +706,6 @@
     "cloudflareCdn": {
       "title": "Cloudflare / CDN через proxy",
       "detail": "Cloudflare, workers.dev, cloudflare-dns и CDNJS.",
-      "icon": "simple-icons:cloudflare",
       "rules": [
         {
           "type": "field",
@@ -747,7 +725,6 @@
     "kinopubIps": {
       "title": "KinoPub через proxy",
       "detail": "Домены KinoPub, CDN/зеркала и 23 IP/subnet правила для backend-адресов.",
-      "icon": "mdi:movie-open",
       "rules": [
         {
           "type": "field",
@@ -801,7 +778,6 @@
     "geminiAi": {
       "title": "Google Gemini / AI через proxy",
       "detail": "Gemini, AI Studio, Generative Language API, OAuth и нужные gstatic/googleusercontent.",
-      "icon": "simple-icons:googlegemini",
       "rules": [
         {
           "type": "field",
@@ -835,7 +811,6 @@
     "nintendoEshop": {
       "title": "Nintendo eShop через proxy",
       "detail": "17 hostnames для eShop, Nemo, Dragons, D4C, CDN и Vermillion.",
-      "icon": "simple-icons:nintendo",
       "rules": [
         {
           "type": "field",
