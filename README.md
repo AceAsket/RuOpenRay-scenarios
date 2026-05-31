@@ -57,7 +57,7 @@ https://raw.githubusercontent.com/USER/REPO/main/scenarios.json
   "version": "2026-05-31",
   "scenarios": {
     "myService": {
-      "title": "Мой сервис через proxy",
+      "title": "Мой сервис",
       "detail": "Короткое описание, которое будет видно в интерфейсе.",
       "icon": "mdi:rocket-launch",
       "rules": [

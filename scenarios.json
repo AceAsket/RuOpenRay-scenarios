@@ -1,12 +1,12 @@
 {
   "schema": 1,
   "name": "RuOpenRay scenarios",
-  "version": "2026-05-31-torrent-trackers",
+  "version": "2026-05-31-clean-titles",
   "description": "Official updateable routing scenarios for RuOpenRay.",
   "scenarios": {
     "ruMinimal": {
       "title": "Минимальный РФ",
-      "detail": "Локальная сеть и RU напрямую, antifilter-community через proxy.",
+      "detail": "Локальная сеть и RU напрямую, antifilter-community в сторону активного сервера.",
       "rules": [
         {
           "type": "field",
@@ -449,7 +449,7 @@
       }
     },
     "intel": {
-      "title": "Intel через proxy",
+      "title": "Intel",
       "detail": "Сайт Intel, Download Center, Driver & Support Assistant, developer/support/community и CDN-загрузки.",
       "rules": [
         {
@@ -542,7 +542,7 @@
       }
     },
     "youtube": {
-      "title": "YouTube через proxy",
+      "title": "YouTube",
       "detail": "geosite, основные домены, short links, API, ytimg и regexp для googlevideo/youtube.",
       "rules": [
         {
@@ -567,7 +567,7 @@
       }
     },
     "instagram": {
-      "title": "Instagram через proxy",
+      "title": "Instagram",
       "detail": "Instagram, CDN, Graph API и Threads через активный сервер.",
       "rules": [
         {
@@ -592,7 +592,7 @@
       }
     },
     "whatsapp": {
-      "title": "WhatsApp через proxy",
+      "title": "WhatsApp",
       "detail": "Web WhatsApp, wa.me, whatsapp.net и медиа-домены.",
       "rules": [
         {
@@ -617,7 +617,7 @@
       }
     },
     "facebook": {
-      "title": "Facebook через proxy",
+      "title": "Facebook",
       "detail": "Facebook, Messenger, Graph API, CDN и facebook-dev geosite.",
       "rules": [
         {
@@ -647,7 +647,7 @@
       }
     },
     "linkedin": {
-      "title": "LinkedIn через proxy",
+      "title": "LinkedIn",
       "detail": "LinkedIn, short links, CDN и статические ресурсы.",
       "rules": [
         {
@@ -672,7 +672,7 @@
       }
     },
     "patreon": {
-      "title": "Patreon через proxy",
+      "title": "Patreon",
       "detail": "Patreon, API, community и медиа с patreonusercontent.",
       "rules": [
         {
@@ -697,7 +697,7 @@
       }
     },
     "github": {
-      "title": "GitHub через proxy",
+      "title": "GitHub",
       "detail": "GitHub, API, raw/assets, Pages и githubusercontent.",
       "rules": [
         {
@@ -723,7 +723,7 @@
       }
     },
     "claude": {
-      "title": "Claude через proxy",
+      "title": "Claude",
       "detail": "Claude web, Anthropic Console, API и документация через активный сервер.",
       "rules": [
         {
@@ -748,7 +748,7 @@
       }
     },
     "xTwitter": {
-      "title": "X / Twitter через proxy",
+      "title": "X / Twitter",
       "detail": "X, Twitter, t.co, media CDN и twimg.",
       "rules": [
         {
@@ -774,7 +774,7 @@
       }
     },
     "tiktok": {
-      "title": "TikTok через proxy",
+      "title": "TikTok",
       "detail": "TikTok, CDN, byteoversea и video/static домены.",
       "rules": [
         {
@@ -799,7 +799,7 @@
       }
     },
     "netflix": {
-      "title": "Netflix через proxy",
+      "title": "Netflix",
       "detail": "Netflix, nflxvideo и служебные CDN-домены.",
       "rules": [
         {
@@ -823,7 +823,7 @@
       }
     },
     "cloudflareCdn": {
-      "title": "Cloudflare / CDN через proxy",
+      "title": "Cloudflare / CDN",
       "detail": "Cloudflare, workers.dev, cloudflare-dns и CDNJS.",
       "rules": [
         {
@@ -846,7 +846,7 @@
       }
     },
     "kinopubIps": {
-      "title": "KinoPub через proxy",
+      "title": "KinoPub",
       "detail": "Домены KinoPub, CDN/зеркала и 23 IP/subnet правила для backend-адресов.",
       "rules": [
         {
@@ -903,7 +903,7 @@
       }
     },
     "torrentTrackers": {
-      "title": "Торрент-трекеры через proxy",
+      "title": "Торрент-трекеры",
       "detail": "RuTracker, Rutor, Kinozal, NNMClub, LostFilm, Tapochek и популярные зеркала трекеров.",
       "rules": [
         {
@@ -963,7 +963,7 @@
       }
     },
     "geminiAi": {
-      "title": "Google Gemini / AI через proxy",
+      "title": "Google Gemini / AI",
       "detail": "Gemini, AI Studio, Generative Language API, OAuth и нужные gstatic/googleusercontent.",
       "rules": [
         {
@@ -1000,7 +1000,7 @@
       }
     },
     "nintendoEshop": {
-      "title": "Nintendo eShop через proxy",
+      "title": "Nintendo eShop",
       "detail": "17 hostnames для eShop, Nemo, Dragons, D4C, CDN и Vermillion.",
       "rules": [
         {
