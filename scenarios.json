@@ -1,7 +1,7 @@
 {
   "schema": 1,
   "name": "RuOpenRay scenarios",
-  "version": "2026-06-01-intel-dsa",
+  "version": "2026-06-12-kinopub-cdn",
   "description": "Official updateable routing scenarios for RuOpenRay.",
   "scenarios": {
     "ruMinimal": {
