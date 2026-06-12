@@ -866,6 +866,8 @@
             "domain:kpdl.link",
             "regexp:cdn-service.*",
             "domain:cdntogo.net",
+            "regexp:(\\w+)-static-[0-9]+\\.cdntogo\\.net$",
+            "regexp:cdnt(\\w+)-static-[0-9]+\\.net$",
             "domain:cdn2cdn.com",
             "domain:cdn2site.com"
           ],
