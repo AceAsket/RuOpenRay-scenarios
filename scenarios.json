@@ -1,7 +1,7 @@
 {
   "schema": 1,
   "name": "RuOpenRay scenarios",
-  "version": "2026-06-12-kinopub-cdn",
+  "version": "2026-07-05-discord-rtc",
   "description": "Official updateable routing scenarios for RuOpenRay.",
   "scenarios": {
     "ruMinimal": {
@@ -37,7 +37,7 @@
     },
     "discordFull": {
       "title": "Discord полный",
-      "detail": "Домены, CDN, RTC через Cloudflare, voice/media и резервные Google WebRTC диапазоны.",
+      "detail": "Домены, CDN, latency/region gateway, RTC через Cloudflare, voice/media и резервные Google WebRTC диапазоны.",
       "rules": [
         {
           "type": "field",
@@ -57,9 +57,14 @@
             "domain:router.discordapp.net",
             "domain:rtc.discord.media",
             "domain:voice.discord.media",
+            "domain:latency.discord.media",
             "domain:images-ext-1.discordapp.net",
             "domain:images-ext-2.discordapp.net",
-            "domain:discord-attachments-uploads-prd.storage.googleapis.com"
+            "domain:discord-attachments-uploads-prd.storage.googleapis.com",
+            "regexp:.*\\.discord\\.gg",
+            "regexp:.*\\.discord\\.media",
+            "regexp:.*\\.discordapp\\.com",
+            "regexp:.*\\.discordapp\\.net"
           ]
         },
         {
