@@ -1,7 +1,7 @@
 {
   "schema": 1,
   "name": "RuOpenRay scenarios",
-  "version": "2026-07-05-discord-rtc",
+  "version": "2026-10-06-rule-audit",
   "description": "Official updateable routing scenarios for RuOpenRay.",
   "scenarios": {
     "ruMinimal": {
@@ -37,7 +37,7 @@
     },
     "discordFull": {
       "title": "Discord полный",
-      "detail": "Домены, CDN, latency/region gateway, RTC через Cloudflare, voice/media и резервные Google WebRTC диапазоны.",
+      "detail": "Домены Discord и UDP для RTC/голоса. Резервные диапазоны Cloudflare и Google общие и могут затронуть другие приложения.",
       "rules": [
         {
           "type": "field",
@@ -48,18 +48,7 @@
             "domain:discord.media",
             "domain:discordapp.com",
             "domain:discordapp.net",
-            "domain:gateway.discord.gg",
-            "domain:media.discordapp.net",
-            "domain:cdn.discordapp.com",
             "domain:vencord.dev",
-            "domain:status.discord.com",
-            "domain:updates.discord.com",
-            "domain:router.discordapp.net",
-            "domain:rtc.discord.media",
-            "domain:voice.discord.media",
-            "domain:latency.discord.media",
-            "domain:images-ext-1.discordapp.net",
-            "domain:images-ext-2.discordapp.net",
             "domain:discord-attachments-uploads-prd.storage.googleapis.com",
             "regexp:.*\\.discord\\.gg",
             "regexp:.*\\.discord\\.media",
@@ -73,15 +62,12 @@
           "network": "udp",
           "ip": [
             "104.16.0.0/12",
-            "104.24.0.0/14",
             "162.158.0.0/15",
-            "162.159.0.0/16",
             "172.64.0.0/13",
             "188.114.96.0/20",
             "198.41.128.0/17",
             "190.93.240.0/20",
-            "197.234.240.0/22",
-            "198.41.192.0/19"
+            "197.234.240.0/22"
           ]
         },
         {
@@ -90,18 +76,6 @@
           "network": "udp",
           "ip": [
             "66.22.192.0/18",
-            "66.22.196.0/24",
-            "66.22.197.0/24",
-            "66.22.198.0/24",
-            "66.22.199.0/24",
-            "66.22.216.0/24",
-            "66.22.217.0/24",
-            "66.22.237.0/24",
-            "66.22.238.0/24",
-            "66.22.241.0/24",
-            "66.22.242.0/24",
-            "66.22.243.0/24",
-            "66.22.244.0/24",
             "198.244.231.0/24",
             "195.62.89.0/24",
             "64.71.8.96/29",
@@ -120,9 +94,6 @@
             "34.126.226.0/24",
             "35.192.0.0/12",
             "35.208.0.0/12",
-            "35.207.81.0/24",
-            "35.207.171.0/24",
-            "35.207.188.0/24",
             "64.233.165.0/24"
           ]
         }
@@ -169,11 +140,8 @@
             "91.108.56.0/22",
             "95.161.64.0/20",
             "149.154.160.0/20",
-            "149.154.164.0/22",
-            "149.154.167.0/24",
             "185.76.151.0/24",
-            "109.239.140.0/24",
-            "149.154.175.0/24"
+            "109.239.140.0/24"
           ]
         },
         {
@@ -182,7 +150,6 @@
           "network": "udp",
           "ip": [
             "91.108.0.0/16",
-            "149.154.160.0/20",
             "149.154.0.0/16"
           ]
         }
@@ -213,26 +180,19 @@
             "domain:messenger.com",
             "domain:m.me",
             "domain:connect.facebook.net",
-            "domain:graph.facebook.com",
             "regexp:.*\\.facebook\\.com",
             "regexp:.*\\.fbcdn\\.net",
             "regexp:.*\\.messenger\\.com",
             "geosite:instagram",
             "domain:instagram.com",
-            "domain:www.instagram.com",
-            "domain:i.instagram.com",
-            "domain:graph.instagram.com",
             "domain:cdninstagram.com",
             "domain:threads.net",
             "regexp:.*\\.instagram\\.com",
             "regexp:.*\\.cdninstagram\\.com",
             "geosite:whatsapp",
             "domain:whatsapp.com",
-            "domain:web.whatsapp.com",
             "domain:whatsapp.net",
             "domain:wa.me",
-            "domain:mmg.whatsapp.net",
-            "domain:static.whatsapp.net",
             "regexp:.*\\.whatsapp\\.com",
             "regexp:.*\\.whatsapp\\.net"
           ]
@@ -258,16 +218,7 @@
             "domain:tuyaaf.com",
             "domain:iotbing.com",
             "domain:tuya-inc.cn",
-            "domain:smartapp.tuya.com",
-            "domain:smartlife.app.tuya.com",
-            "domain:app.tuya.com",
-            "domain:openapi.tuyaus.com",
-            "domain:openapi.tuyacn.com",
-            "domain:openapi.tuyaeu.com",
             "domain:openapi.tuyain.com",
-            "domain:openapi-sg.iotbing.com",
-            "domain:openapi-ueaz.tuyaus.com",
-            "domain:openapi-weaz.tuyaeu.com",
             "full:nlb-vuyt41vm4ajpnwwimz.cn-shanghai.nlb.aliyuncs.com"
           ]
         }
@@ -279,7 +230,7 @@
     },
     "chatgpt": {
       "title": "ChatGPT / OpenAI",
-      "detail": "Домены ChatGPT/OpenAI и Cloudflare/OpenAI IP ranges одной подборкой.",
+      "detail": "Домены ChatGPT/OpenAI и ранее используемые общие диапазоны Cloudflare. Для точной маршрутизации можно оставить только правило доменов.",
       "rules": [
         {
           "type": "field",
@@ -319,7 +270,7 @@
     },
     "googleFull": {
       "title": "Google / CDN / QUIC",
-      "detail": "Google domains, Gemini geosite, QUIC/HTTP3 UDP ranges и TCP/CDN ranges.",
+      "detail": "Домены Google и CDN, IP-диапазоны для TCP и UDP/QUIC. Диапазоны общие: они могут затронуть другие сервисы Google Cloud.",
       "rules": [
         {
           "type": "field",
@@ -338,7 +289,6 @@
         {
           "type": "field",
           "outboundTag": "proxy",
-          "network": "udp",
           "ip": [
             "64.233.160.0/19",
             "66.102.0.0/20",
@@ -347,27 +297,6 @@
             "74.125.0.0/16",
             "108.177.0.0/17",
             "142.250.0.0/15",
-            "142.251.0.0/16",
-            "172.217.0.0/16",
-            "172.253.0.0/16",
-            "173.194.0.0/16",
-            "209.85.128.0/17",
-            "216.58.192.0/19",
-            "216.239.32.0/19"
-          ]
-        },
-        {
-          "type": "field",
-          "outboundTag": "proxy",
-          "ip": [
-            "64.233.160.0/19",
-            "66.102.0.0/20",
-            "70.32.128.0/19",
-            "72.14.192.0/18",
-            "74.125.0.0/16",
-            "108.177.0.0/17",
-            "142.250.0.0/15",
-            "142.251.0.0/16",
             "172.217.0.0/16",
             "172.253.0.0/16",
             "173.194.0.0/16",
@@ -384,7 +313,7 @@
     },
     "microsoftFull": {
       "title": "Microsoft / Windows / Store",
-      "detail": "Microsoft, Windows Update, Store, Xbox, Office, Azure CDN и UDP/QUIC диапазоны.",
+      "detail": "Windows Update, Store, Xbox, Office и Azure. Общие IP-диапазоны облака могут затронуть сторонние сайты; DNS и локальные исключения ставьте выше.",
       "rules": [
         {
           "type": "field",
@@ -431,21 +360,6 @@
             "150.171.0.0/16",
             "204.79.197.0/24"
           ]
-        },
-        {
-          "type": "field",
-          "outboundTag": "proxy",
-          "network": "udp",
-          "ip": [
-            "13.64.0.0/11",
-            "20.0.0.0/8",
-            "40.64.0.0/10",
-            "51.0.0.0/8",
-            "52.0.0.0/8",
-            "104.40.0.0/13",
-            "150.171.0.0/16",
-            "204.79.197.0/24"
-          ]
         }
       ],
       "icon": {
@@ -462,21 +376,7 @@
           "outboundTag": "proxy",
           "domain": [
             "domain:intel.com",
-            "domain:www.intel.com",
             "domain:intel.ru",
-            "domain:ark.intel.com",
-            "domain:support.intel.com",
-            "domain:supporttickets.intel.com",
-            "domain:community.intel.com",
-            "domain:developer.intel.com",
-            "domain:software.intel.com",
-            "domain:downloadcenter.intel.com",
-            "domain:downloadmirror.intel.com",
-            "domain:registrationcenter-download.intel.com",
-            "domain:dsadata.intel.com",
-            "domain:gameplay.intel.com",
-            "domain:login.intel.com",
-            "domain:signin.intel.com",
             "domain:intelcorp.scene7.com",
             "regexp:.*\\.intel\\.com"
           ]
@@ -521,7 +421,6 @@
           "outboundTag": "proxy",
           "domain": [
             "domain:speedtest.net",
-            "domain:www.speedtest.net",
             "domain:speedtest.com",
             "domain:ookla.com",
             "domain:ooklaserver.net",
@@ -580,9 +479,6 @@
           "domain": [
             "geosite:instagram",
             "domain:instagram.com",
-            "domain:www.instagram.com",
-            "domain:i.instagram.com",
-            "domain:graph.instagram.com",
             "domain:cdninstagram.com",
             "domain:threads.net",
             "regexp:.*\\.instagram\\.com",
@@ -605,11 +501,8 @@
           "domain": [
             "geosite:whatsapp",
             "domain:whatsapp.com",
-            "domain:web.whatsapp.com",
             "domain:whatsapp.net",
             "domain:wa.me",
-            "domain:mmg.whatsapp.net",
-            "domain:static.whatsapp.net",
             "regexp:.*\\.whatsapp\\.com",
             "regexp:.*\\.whatsapp\\.net"
           ]
@@ -638,7 +531,6 @@
             "domain:messenger.com",
             "domain:m.me",
             "domain:connect.facebook.net",
-            "domain:graph.facebook.com",
             "regexp:.*\\.facebook\\.com",
             "regexp:.*\\.fbcdn\\.net",
             "regexp:.*\\.messenger\\.com"
@@ -660,7 +552,6 @@
           "domain": [
             "geosite:linkedin",
             "domain:linkedin.com",
-            "domain:www.linkedin.com",
             "domain:lnkd.in",
             "domain:licdn.com",
             "domain:linkedinstatic.com",
@@ -684,10 +575,7 @@
           "outboundTag": "proxy",
           "domain": [
             "domain:patreon.com",
-            "domain:www.patreon.com",
-            "domain:api.patreon.com",
             "domain:patreonusercontent.com",
-            "domain:c10.patreonusercontent.com",
             "domain:patreoncommunity.com",
             "regexp:.*\\.patreon\\.com",
             "regexp:.*\\.patreonusercontent\\.com",
@@ -710,12 +598,9 @@
           "domain": [
             "geosite:github",
             "domain:github.com",
-            "domain:api.github.com",
             "domain:github.io",
             "domain:githubassets.com",
             "domain:githubusercontent.com",
-            "domain:raw.githubusercontent.com",
-            "domain:objects.githubusercontent.com",
             "regexp:.*\\.github\\.com",
             "regexp:.*\\.githubusercontent\\.com"
           ]
@@ -727,8 +612,8 @@
       }
     },
     "claude": {
-      "title": "Claude",
-      "detail": "Claude web, Anthropic Console, API и документация через активный сервер.",
+      "title": "Claude / Anthropic",
+      "detail": "Claude, сайт claude.com, Anthropic Console и API через выбранное назначение.",
       "rules": [
         {
           "type": "field",
@@ -737,12 +622,10 @@
             "domain:claude.ai",
             "domain:anthropic.com",
             "domain:anthropic.ai",
-            "domain:console.anthropic.com",
-            "domain:api.anthropic.com",
-            "domain:docs.anthropic.com",
             "regexp:.*\\.claude\\.ai",
             "regexp:.*\\.anthropic\\.com",
-            "regexp:.*\\.anthropic\\.ai"
+            "regexp:.*\\.anthropic\\.ai",
+            "domain:claude.com"
           ]
         }
       ],
@@ -764,8 +647,6 @@
             "domain:twitter.com",
             "domain:t.co",
             "domain:twimg.com",
-            "domain:pbs.twimg.com",
-            "domain:video.twimg.com",
             "regexp:.*\\.twitter\\.com",
             "regexp:.*\\.x\\.com",
             "regexp:.*\\.twimg\\.com"
@@ -837,7 +718,6 @@
             "geosite:cloudflare",
             "domain:cloudflare.com",
             "domain:cloudflare-dns.com",
-            "domain:cdnjs.cloudflare.com",
             "domain:workers.dev",
             "regexp:.*\\.cloudflare\\.com",
             "regexp:.*\\.workers\\.dev"
@@ -851,7 +731,7 @@
     },
     "kinopubIps": {
       "title": "KinoPub",
-      "detail": "Домены KinoPub, CDN/зеркала и 23 IP/subnet правила для backend-адресов.",
+      "detail": "Домены и CDN KinoPub, отдельное правило для IP-диапазонов. Домены и IP применяются независимо.",
       "rules": [
         {
           "type": "field",
@@ -875,7 +755,11 @@
             "regexp:cdnt(\\w+)-static-[0-9]+\\.net$",
             "domain:cdn2cdn.com",
             "domain:cdn2site.com"
-          ],
+          ]
+        },
+        {
+          "type": "field",
+          "outboundTag": "proxy",
           "ip": [
             "5.188.189.0/24",
             "5.199.173.0/24",
@@ -1037,6 +921,317 @@
         "type": "svg",
         "svg": "<svg class=\"brand-icon\" viewBox=\"0 0 16 16\" focusable=\"false\"><path fill=\"#00a7e1\" d=\"M9.34 8.005c0-4.38.01-7.972.023-7.982C9.373.01 10.036 0 10.831 0c1.153 0 1.51.01 1.743.05c1.73.298 3.045 1.6 3.373 3.326c.046.242.053.809.053 4.61c0 4.06.005 4.537-.123 4.976c-.022.076-.048.15-.08.242a4.14 4.14 0 0 1-3.426 2.767c-.317.033-2.889.046-2.978.013c-.05-.02-.053-.752-.053-7.979m4.675.269a1.62 1.62 0 0 0-1.113-1.034a1.61 1.61 0 0 0-1.938 1.073a1.9 1.9 0 0 0-.014.935a1.63 1.63 0 0 0 1.952 1.107c.51-.136.908-.504 1.11-1.028c.11-.285.113-.742.003-1.053\"></path><path fill=\"#e60012\" d=\"M3.71 3.317c-.208.04-.526.199-.695.348c-.348.301-.52.729-.494 1.232c.013.262.03.332.136.544c.155.321.39.556.712.715c.222.11.278.123.567.133c.261.01.354 0 .53-.06c.719-.242 1.153-.94 1.03-1.656c-.142-.852-.95-1.422-1.786-1.256\"></path><path fill=\"#e60012\" d=\"M3.425.053a4.14 4.14 0 0 0-3.28 3.015C0 3.628-.01 3.956.005 8.3c.01 3.99.014 4.082.08 4.39c.368 1.66 1.548 2.844 3.224 3.235c.22.05.497.06 2.29.07c1.856.012 2.048.009 2.097-.04c.05-.05.053-.69.053-7.94c0-5.374-.01-7.906-.033-7.952c-.033-.06-.09-.063-2.03-.06c-1.578.004-2.052.014-2.26.05Zm3 14.665l-1.35-.016c-1.242-.013-1.375-.02-1.623-.083a2.81 2.81 0 0 1-2.08-2.167c-.074-.335-.074-8.579-.004-8.907a2.85 2.85 0 0 1 1.716-2.05c.438-.176.64-.196 2.058-.2l1.282-.003v13.426Z\"></path></svg>"
       }
+    },
+    "aiTools": {
+      "title": "ИИ: MiniMax и ElevenLabs",
+      "detail": "Сервисы MiniMax и ElevenLabs.",
+      "icon": {
+        "type": "svg",
+        "svg": "<svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.7\"><rect x=\"3\" y=\"3\" width=\"18\" height=\"18\" rx=\"3\"/><path d=\"M7 8h10M7 12h10M7 16h6\"/></svg>"
+      },
+      "rules": [
+        {
+          "type": "field",
+          "outboundTag": "proxy",
+          "domain": [
+            "domain:minimax.io",
+            "domain:minimax.com",
+            "domain:elevenlabs.io"
+          ]
+        }
+      ]
+    },
+    "mangaAnime": {
+      "title": "Манга и аниме",
+      "detail": "Каталоги, сообщества и приложения для манги и аниме.",
+      "icon": {
+        "type": "svg",
+        "svg": "<svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.7\"><rect x=\"3\" y=\"3\" width=\"18\" height=\"18\" rx=\"3\"/><path d=\"M7 8h10M7 12h10M7 16h6\"/></svg>"
+      },
+      "rules": [
+        {
+          "type": "field",
+          "outboundTag": "proxy",
+          "domain": [
+            "domain:rumix.me",
+            "domain:mangadex.org",
+            "domain:weebdex.org",
+            "domain:mangahub.ru",
+            "domain:yagami.me",
+            "domain:manga-chan.me",
+            "domain:ninemanga.com",
+            "domain:chaika.moe",
+            "domain:mangapoisk.io",
+            "domain:namicomi.com",
+            "domain:novelcool.com",
+            "domain:mangalib.org",
+            "domain:yummyani.me",
+            "domain:shikimori.org",
+            "domain:com-x.life",
+            "domain:shokoanime.com",
+            "domain:anidb.net",
+            "domain:api.anidb.net",
+            "domain:anidub.com",
+            "domain:anilibria.app",
+            "domain:mangabook.org"
+          ]
+        }
+      ]
+    },
+    "hardwareTools": {
+      "title": "Оборудование и периферия",
+      "detail": "Производители оборудования, прошивки и инструменты настройки.",
+      "icon": {
+        "type": "svg",
+        "svg": "<svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.7\"><rect x=\"3\" y=\"3\" width=\"18\" height=\"18\" rx=\"3\"/><path d=\"M7 8h10M7 12h10M7 16h6\"/></svg>"
+      },
+      "rules": [
+        {
+          "type": "field",
+          "outboundTag": "proxy",
+          "domain": [
+            "domain:8bitdo.com",
+            "domain:fanvil.com",
+            "domain:nanoleaf.me",
+            "domain:miui.com",
+            "domain:miicharacters.com",
+            "domain:theminiware.com",
+            "domain:eloshapes.com",
+            "domain:banana-pi.org",
+            "domain:friendlyelec.com",
+            "domain:elgato.com",
+            "domain:gl-inet.com"
+          ]
+        }
+      ]
+    },
+    "homelabTools": {
+      "title": "Домашний сервер и приложения",
+      "detail": "Приложения для домашнего сервера, медиатеки и телефонии.",
+      "icon": {
+        "type": "svg",
+        "svg": "<svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.7\"><rect x=\"3\" y=\"3\" width=\"18\" height=\"18\" rx=\"3\"/><path d=\"M7 8h10M7 12h10M7 16h6\"/></svg>"
+      },
+      "rules": [
+        {
+          "type": "field",
+          "outboundTag": "proxy",
+          "domain": [
+            "domain:ubuntu.com",
+            "domain:asterisk.org",
+            "domain:balena.io",
+            "domain:sharkord.com",
+            "domain:symfonium.app",
+            "domain:makemkv.com",
+            "domain:filerun.com",
+            "domain:immich.app",
+            "domain:auroraoss.com",
+            "domain:iperf.fr",
+            "domain:asuswrt-merlin.net"
+          ]
+        }
+      ]
+    },
+    "creatorServices": {
+      "title": "Поддержка авторов и файлообмен",
+      "detail": "Ko-fi, Patreon, MEGA и GoFile.",
+      "icon": {
+        "type": "svg",
+        "svg": "<svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.7\"><rect x=\"3\" y=\"3\" width=\"18\" height=\"18\" rx=\"3\"/><path d=\"M7 8h10M7 12h10M7 16h6\"/></svg>"
+      },
+      "rules": [
+        {
+          "type": "field",
+          "outboundTag": "proxy",
+          "domain": [
+            "domain:ko-fi.com",
+            "domain:gofile.io",
+            "domain:patreonusercontent.com",
+            "domain:mega.nz",
+            "domain:mega.co.nz"
+          ]
+        }
+      ]
+    },
+    "designTools": {
+      "title": "Дизайн, 3D и рабочие сервисы",
+      "detail": "Autodesk, Craft, 3D-модели и приложения для творчества.",
+      "icon": {
+        "type": "svg",
+        "svg": "<svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.7\"><rect x=\"3\" y=\"3\" width=\"18\" height=\"18\" rx=\"3\"/><path d=\"M7 8h10M7 12h10M7 16h6\"/></svg>"
+      },
+      "rules": [
+        {
+          "type": "field",
+          "outboundTag": "proxy",
+          "domain": [
+            "domain:youmagine.com",
+            "domain:invisioncic.com",
+            "domain:gambody.com",
+            "domain:autodesk.com",
+            "domain:digitect.ch",
+            "domain:cdn.craft.cloud",
+            "domain:craft.cloud"
+          ]
+        }
+      ]
+    },
+    "shoppingServices": {
+      "title": "Магазины и аксессуары",
+      "detail": "AliExpress, Etsy и магазины аксессуаров.",
+      "icon": {
+        "type": "svg",
+        "svg": "<svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.7\"><rect x=\"3\" y=\"3\" width=\"18\" height=\"18\" rx=\"3\"/><path d=\"M7 8h10M7 12h10M7 16h6\"/></svg>"
+      },
+      "rules": [
+        {
+          "type": "field",
+          "outboundTag": "proxy",
+          "domain": [
+            "domain:gentlemonster.com",
+            "domain:image.rhinoshield.app",
+            "domain:rhinoshield.io",
+            "domain:aliexpress.com",
+            "domain:etsy.com"
+          ]
+        }
+      ]
+    },
+    "securityTools": {
+      "title": "Проверка безопасности и сети",
+      "detail": "VirusTotal, HIBP, проверка IP и браузера.",
+      "icon": {
+        "type": "svg",
+        "svg": "<svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.7\"><rect x=\"3\" y=\"3\" width=\"18\" height=\"18\" rx=\"3\"/><path d=\"M7 8h10M7 12h10M7 16h6\"/></svg>"
+      },
+      "rules": [
+        {
+          "type": "field",
+          "outboundTag": "proxy",
+          "domain": [
+            "domain:virustotal.com",
+            "domain:pwnedpasswords.com",
+            "domain:2ip.ru",
+            "domain:browserscan.net"
+          ]
+        }
+      ]
+    },
+    "blizzard": {
+      "title": "Blizzard / Battle.net",
+      "detail": "Battle.net, игры Blizzard и домены загрузок.",
+      "icon": {
+        "type": "svg",
+        "svg": "<svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.7\"><rect x=\"3\" y=\"3\" width=\"18\" height=\"18\" rx=\"3\"/><path d=\"M7 8h10M7 12h10M7 16h6\"/></svg>"
+      },
+      "rules": [
+        {
+          "type": "field",
+          "outboundTag": "proxy",
+          "domain": [
+            "domain:blizzard.com",
+            "domain:battle.net",
+            "domain:blizzard.net",
+            "domain:battlenet.com",
+            "domain:blzstatic.cn",
+            "domain:blzcontentstack.com",
+            "domain:blizzardgames.cn"
+          ]
+        }
+      ]
+    },
+    "unraid": {
+      "title": "Unraid: портал и учётная запись",
+      "detail": "Unraid.net и Lime Technology. GitHub и контейнерные реестры вынесены в отдельные подборки.",
+      "icon": {
+        "type": "svg",
+        "svg": "<svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.7\"><rect x=\"3\" y=\"3\" width=\"18\" height=\"18\" rx=\"3\"/><path d=\"M7 8h10M7 12h10M7 16h6\"/></svg>"
+      },
+      "rules": [
+        {
+          "type": "field",
+          "outboundTag": "proxy",
+          "domain": [
+            "domain:unraid.net",
+            "domain:lime-technology.com"
+          ]
+        }
+      ]
+    },
+    "dockerRegistries": {
+      "title": "Docker: контейнеры и реестры",
+      "detail": "Docker Hub, GHCR и LinuxServer. Общие CDN не включены; при необходимости добавляйте точные домены загрузки из журнала.",
+      "icon": {
+        "type": "svg",
+        "svg": "<svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.7\"><rect x=\"3\" y=\"3\" width=\"18\" height=\"18\" rx=\"3\"/><path d=\"M7 8h10M7 12h10M7 16h6\"/></svg>"
+      },
+      "rules": [
+        {
+          "type": "field",
+          "outboundTag": "proxy",
+          "domain": [
+            "domain:docker.io",
+            "domain:docker.com",
+            "domain:ghcr.io",
+            "domain:lscr.io"
+          ]
+        }
+      ]
+    },
+    "itchIo": {
+      "title": "itch.io: игры и загрузки",
+      "detail": "Сайт itch.io и домены itch.zone для изображений, приложений и загрузок.",
+      "icon": {
+        "type": "svg",
+        "svg": "<svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.7\"><rect x=\"3\" y=\"3\" width=\"18\" height=\"18\" rx=\"3\"/><path d=\"M7 8h10M7 12h10M7 16h6\"/></svg>"
+      },
+      "rules": [
+        {
+          "type": "field",
+          "outboundTag": "proxy",
+          "domain": [
+            "domain:itch.io",
+            "domain:itch.zone"
+          ]
+        }
+      ]
+    },
+    "snbforums": {
+      "title": "SNBForums / Asuswrt-Merlin",
+      "detail": "SNBForums и Asuswrt-Merlin; проверка Cloudflare идёт через то же выбранное назначение. Поставьте выше отдельного правила Cloudflare.",
+      "icon": {
+        "type": "svg",
+        "svg": "<svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.7\"><rect x=\"3\" y=\"3\" width=\"18\" height=\"18\" rx=\"3\"/><path d=\"M7 8h10M7 12h10M7 16h6\"/></svg>"
+      },
+      "rules": [
+        {
+          "type": "field",
+          "outboundTag": "proxy",
+          "domain": [
+            "domain:snbforums.com",
+            "domain:asuswrt-merlin.net",
+            "domain:challenges.cloudflare.com"
+          ]
+        }
+      ]
+    },
+    "cloudStorageCdn": {
+      "title": "Общие CDN: CloudFront и Cloudflare Storage",
+      "detail": "Широкая подборка по желанию: домены общих CDN используются множеством независимых сайтов. Для точного маршрута выбирайте конкретные хосты.",
+      "icon": {
+        "type": "svg",
+        "svg": "<svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.7\"><rect x=\"3\" y=\"3\" width=\"18\" height=\"18\" rx=\"3\"/><path d=\"M7 8h10M7 12h10M7 16h6\"/></svg>"
+      },
+      "rules": [
+        {
+          "type": "field",
+          "outboundTag": "proxy",
+          "domain": [
+            "domain:cloudfront.net",
+            "domain:cloudflarestorage.com"
+          ]
+        }
+      ]
     }
   }
 }
