@@ -1,7 +1,7 @@
 {
   "schema": 1,
   "name": "RuOpenRay scenarios",
-  "version": "2026-10-06-rule-audit2",
+  "version": "2026-10-27-discord-web",
   "description": "Official updateable routing scenarios for RuOpenRay.",
   "scenarios": {
     "ruMinimal": {
@@ -37,7 +37,7 @@
     },
     "discordFull": {
       "title": "Discord полный",
-      "detail": "Домены Discord и UDP для RTC/голоса. Резервные диапазоны Cloudflare и Google общие и могут затронуть другие приложения.",
+      "detail": "Домены Discord, скрипт локализации главной страницы и UDP для RTC/голоса. Резервные диапазоны Cloudflare и Google общие и могут затронуть другие приложения.",
       "rules": [
         {
           "type": "field",
@@ -48,6 +48,7 @@
             "domain:discord.media",
             "domain:discordapp.com",
             "domain:discordapp.net",
+            "full:cdn.localizeapi.com",
             "domain:vencord.dev",
             "domain:discord-attachments-uploads-prd.storage.googleapis.com",
             "regexp:.*\\.discord\\.gg",
